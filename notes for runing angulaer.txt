@@ -1,0 +1,7 @@
+npm install -g @angular/cli@latest
+cd C:\IDB\git\angularjs
+ng new my-first-app
+n
+css> Enter
+cd C:\IDB\git\angularjs\my-first-app
+ng serve
