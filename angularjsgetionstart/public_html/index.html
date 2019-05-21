@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head >
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="css/bootstrap.css" rel="stylesheet" type="text/css"/>
+        <link href="css/bootstrap-theme.css" rel="stylesheet" type="text/css"/>
+        <script src="js/angular.js" type="text/javascript"></script>
+    </head>
+    <body>
+        <div ng-app="" ng-init="yasin = 'Mr.Yasin'">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Subject</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Name : <input type="text" ng-model="yasin" placeholder="Enter Your Name"></td>
+                        <td>Hello {{yasin}}</td>
+                    </tr>
+                    <tr>
+                        <td>Enter Number1 : <input type="text" ng-model="number1" placeholder="Enter Number1"><br>
+                            Enter Number2 : <input type="text" ng-model="number2" placeholder="Enter Number2">
+                        </td>
+                        <td>Addition : {{number1 + number2}}</td>
+                        
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </body>
+</html>
+

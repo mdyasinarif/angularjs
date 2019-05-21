@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="css/bootstrap.css" rel="stylesheet" type="text/css"/>
+        <link href="css/bootstrap-theme.css" rel="stylesheet" type="text/css"/>
+        <script src="js/angular.js" type="text/javascript"></script>
+    </head>
+    <body>
+        <div ng-app="myApp" ng-controller="myCtrl" ng-init="gr='grey'">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Decription</th>
+                        <th>Input</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>First Name : </td>
+                        <td><input type="text" ng-model="firstName" style="background: {{gr}}"></td>
+                    </tr>
+                    <tr>
+                        <td>Last Name :</td>
+                        <td> <input type="text" ng-model="lastName"></td>
+                    </tr>
+                    <tr>
+                        <td>Age : </td>
+                        <td>  <input type="text" ng-model="age"></td>
+                    </tr>
+                    <tr>
+                        <td>Full Name :</td>
+                        <td>{{firstName + " " + lastName + " " + age}}</td>
+                    </tr>
+                </tbody>
+            </table>
+
+           
+        </div>
+        <script>
+            var app = angular.module('myApp', []);
+            app.controller('myCtrl', function ($scope) {
+                $scope.firstName = "";
+                $scope.lastName = "";
+                $scope.age = "";
+            })
+        </script>
+    </body>
+</html>
