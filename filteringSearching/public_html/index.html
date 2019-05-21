@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html ng-app="myModule">
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="css/bootstrap.css" rel="stylesheet" type="text/css"/>
+        <link href="css/bootstrap-theme.css" rel="stylesheet" type="text/css"/>
+        <script src="js/angular.js" type="text/javascript"></script>
+        <script src="app.js" type="text/javascript"></script>
+    </head>
+    <body ng-controller="myCtrl">
+        <div>
+            <input type="text" ng-model="search.name"/>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Name </th>
+                        <th>Position </th>
+                        <th>Salary </th>
+                        <th>Status </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!--by default false thaka (Assanding ) desanging kort ta hola true/+/1-->
+                    <tr ng-repeat="employee in employees |orderBy:'name':true | filter:search">
+                        <td>{{employee.name | uppercase}}</td>
+                        <td>{{employee.post |lowercase}}</td>
+                        <!--<td>{{employee.salary|number:2}}</td>-->
+                        <td>{{employee.salary|currency:'TK.':3}}</td>
+                        <td>{{employee.status|status}}</td>
+                        
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </body>
+</html>
