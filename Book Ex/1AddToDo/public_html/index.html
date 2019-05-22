@@ -14,7 +14,7 @@ and open the template in the editor.
         <script src="js/angular.js" type="text/javascript"></script>
         <script>
             var model = {
-              user : "Adam",
+              user : "Yasin",
 //              items : [
 //                  {action:"Buy Flower",done:false},
 //                  {action:"Get Shoes",done:false},
@@ -36,8 +36,10 @@ and open the template in the editor.
                         if (item.done  === false || showComplete === true) {
     resultArr.push(item);
 }
+
                     });
                     return resultArr;
+                    
                 };
             });
             todoApp.controller("ToDoCtrl",function ($scope){

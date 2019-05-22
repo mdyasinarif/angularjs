@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html ng-app="exampleApp">
+    <head>
+        <title>AngularJs Demo</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="css/bootstrap.css" rel="stylesheet" type="text/css"/>
+        <link href="css/bootstrap-theme.css" rel="stylesheet" type="text/css"/>
+        <script src="js/angular.js" type="text/javascript"></script>
+        <script>
+            var myApp = angular.module("exampleApp", []);
+            myApp.controller("dayCtrl", function($scope, days) {
+            $scope.day = days.today;
+            });
+            myApp.controller("tomorrowCtrl", function($scope, days) {
+            $scope.day = days.tomorrow;
+            });
+            myApp.directive("highlight", function($filter) {
+            var dayFilter = $filter("dayName");
+            return function (scope, element, attrs){
+            if (dayFilter(scope.day) == attrs["highlight"]) {
+            element.css("color", "red");
+            }
+            }
+            });
+            myApp.filter("dayName", function() {
+            var dayNames = ["sunday", "Monday", "Tuesday", "wednesday", "Thursday", "Friday", "saturday"];
+            return function(input) {
+            return angular.isNumber(input)? dayNames[input]:input;
+            };
+            });
+            
+            myApp.service("days", function() {
+            this.today = new Date().getDay();
+            this.tomorrow = this.today + 1;
+            });
+        </script>
+    </head>
+    <body>
+        <div class="panel" >
+            <div class="page-header">
+                <h3>AngularJs App</h3>
+            </div>
+            <h4 ng-controller="dayCtrl" highlight="wednesday">Today is {{day|| "(unknow)"|dayName}}</h4>
+            <h4 ng-controller="tomorrowCtrl">Tomorrow is {{day|| "(unknow)"| dayName}}</h4>
+        </div>
+    </body>
+</html>
