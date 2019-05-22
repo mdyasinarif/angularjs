@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html ng-app="myModule" >
+    <head lang="en" >
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="css/bootstrap.css" rel="stylesheet" type="text/css"/>
+        <link href="css/bootstrap-theme.css" rel="stylesheet" type="text/css"/>
+        <script src="js/angular.js" type="text/javascript"></script>
+        <script src="app.js" type="text/javascript"></script>
+        <script src="data.js" type="text/javascript"></script>
+
+    </head>
+    <body  >
+        <div ng-controller="myCtrl">
+            <h1>{{hello}}</h1>
+        </div>
+        <div ng-controller="myCtrl2">
+            <h1>{{hello}}</h1>
+        </div>
+        <div ng-controller="myCtrl3">
+            <h1>{{hello}}</h1>
+        </div>
+        <div ng-controller="myCtrl4">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Name </th>
+                        <th>Position </th>
+                        <th>Salary </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="employee in employees">
+                        <td>{{employee.name}}</td>
+                        <td>{{employee.post}}</td>
+                        <td>{{employee.salary}}</td>
+
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div ng-controller="myCtrl5">
+            <h1>{{ country }}</h1>
+        </div>
+        <div ng-controller="myCtrl6">
+            <h1>{{ clock }}</h1>
+        </div>
+
+    </body>
+</html>
