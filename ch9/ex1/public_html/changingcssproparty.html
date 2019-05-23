@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html ng-app="exampleApp">
+    <head>
+        <title>AngularJs Demo</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="css/bootstrap.css" rel="stylesheet" type="text/css"/>
+        <link href="css/bootstrap-theme.css" rel="stylesheet" type="text/css"/>
+        <script src="js/angular.js" type="text/javascript"></script>
+        <script>
+            var myApp = angular.module("exampleApp", []);
+            myApp.controller("sunCtrl", function($scope) {
+//            $scope.dayNames = ["sunday", "Monday", "Tuesday", "wednesday", "Thursday", "Friday", "saturday"];
+            $scope.sun = "Sunday";
+            
+            });
+            myApp.controller("monCtrl", function($scope) {
+
+            $scope.mon = "Monday";
+            
+            });
+            
+            myApp.controller("tusCtrl", function($scope) {
+
+            $scope.tus = "Tuesday";
+            
+            });
+            
+            myApp.controller("wedCtrl", function($scope) {
+
+            $scope.wed = "Wednesday";
+            
+            });
+            
+            myApp.controller("thuCtrl", function($scope) {
+
+            $scope.thu = "Thursday";
+            
+            });
+            
+            myApp.controller("friCtrl", function($scope) {
+
+            $scope.fri = "Friday";
+            
+            });
+            
+            myApp.controller("satCtrl", function($scope) {
+
+            $scope.sat = "Saturday";
+            
+            });
+            myApp.directive("highlight", function() {
+            return function (scope, element, attrs){
+            if (scope.sun == attrs["highlight"]) {
+            element.css("color", "red");
+            element.css("font-style", "red");
+          
+            }
+            if (scope.mon == attrs["highlight"]) {
+            element.css("color", "green");
+            }
+            if (scope.tus == attrs["highlight"]) {
+            element.css("color", "gray");
+            }
+            if (scope.wed == attrs["highlight"]) {
+            element.css("color", "blue");
+            }
+            if (scope.thu == attrs["highlight"]) {
+            element.css("color", "olive");
+            }
+            if (scope.fri == attrs["highlight"]) {
+            element.css("color", "pink");
+            }
+            if (scope.sat == attrs["highlight"]) {
+            element.css("color", "black");
+            }
+            }
+            });
+            
+        </script>
+    </head>
+    <body >
+        <div class="panel" >
+            <div class="page-header">
+                <h3>AngularJs App</h3>
+            </div>
+           
+            <h4 ng-controller="sunCtrl" highlight="Sunday">Today is {{sun|| "(unknow)"}}</h4>
+            <h4 ng-controller="monCtrl" highlight="Monday">Today is {{mon|| "(unknow)"}}</h4>
+            <h4 ng-controller="tusCtrl" highlight="Tuesday">Today is {{tus|| "(unknow)"}}</h4>
+            <h4 ng-controller="wedCtrl" highlight="Wednesday">Today is {{wed|| "(unknow)"}}</h4>
+            <h4 ng-controller="thuCtrl" highlight="Thursday">Today is {{thu|| "(unknow)"}}</h4>
+            <h4 ng-controller="friCtrl" highlight="Friday">Today is {{fri|| "(unknow)"}}</h4>
+            <h4 ng-controller="satCtrl" highlight="Saturday">Today is {{sat|| "(unknow)"}}</h4>
+             
+        </div>
+    </body>
+</html>

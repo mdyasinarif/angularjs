@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html ng-app="exampleApp">
+    <head>
+        <title>AngularJs Demo</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="css/bootstrap.css" rel="stylesheet" type="text/css"/>
+        <link href="css/bootstrap-theme.css" rel="stylesheet" type="text/css"/>
+        <script src="js/angular.js" type="text/javascript"></script>
+        <script>
+            var myApp = angular.module("exampleApp", []);
+            myApp.controller("dayCtrl", function ($scope) {
+                var dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+                $scope.day = dayNames[new Date().getDay()];
+            });
+            myApp.directive("highlight", function () {
+                return function (scope, element, attrs) {
+                    if (scope.day == "Sunday") {
+                        element.css("color", "green");
+                    } else if (scope.day == "Monday") {
+                        element.css("color", "red");
+                    } else if (scope.day == "Tuesday") {
+                        element.css("color", "purple");
+                    } 
+                    else if (scope.day == "Wednesday") {
+                        element.css("color", "olive");
+                    } 
+                    else if (scope.day == "Thursday") {
+                        element.css("color", "gray");
+                        element.css("font-style", "italic");
+                    } 
+                    else if (scope.day == "Friday") {
+                        element.css("color", "blue");
+                    } 
+                    else if (scope.day == "Saturday") {
+                        element.css("color", "yello");
+                    }else {
+                        element.css("color", "orange");
+                    }
+                }
+            });
+        </script>
+    </head>
+    <body>
+        <div class="panel" >
+            <div class="page-header">
+                <h3>AngularJs App</h3>
+            </div>
+            <div ng-controller="dayCtrl" highlight="">
+                 <h4>Today is {{day|| "(unknow)"}}</h4>
+            </div>
+           
+
+        </div>
+    </body>
+</html>
