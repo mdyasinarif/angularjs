@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="css/bootstrap.css" rel="stylesheet" type="text/css"/>
+        <link href="css/bootstrap-theme.css" rel="stylesheet" type="text/css"/>
+        <script src="js/angular.js" type="text/javascript"></script>
+    </head>
+    <body ng-app="">
+        <table border="0">
+            
+            <tbody>
+                <tr>
+                    <td><input type="checkbox" ng-model="enableDisable"/>Disable Button</td>
+                    <td><button ng-disabled="enableDisable">Click Me</button></td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" ng-model="ShowHide"/>ShowHide</td>
+                    <td><button ng-show="ShowHide">Click me</td>
+                </tr>
+                <tr>
+                    <td><p>Total Click : {{clickCounter}}</p></td>
+                    <td><button ng-click="clickCounter = clickCounter+1">Click me</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </body>
+</html>

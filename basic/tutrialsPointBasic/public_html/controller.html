@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html ng-app="myModle">
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="css/bootstrap.css" rel="stylesheet" type="text/css"/>
+        <link href="css/bootstrap-theme.css" rel="stylesheet" type="text/css"/>
+        <script src="js/angular.min.js" type="text/javascript"></script>
+        <script src="script.js" type="text/javascript"></script>
+        <style>
+            input.ng-invalid  {
+                background-color:  #2aabd2;
+            }
+            input.ng-valid {
+                background-color:  #ccffff;
+            }
+            form.ng-invalid{
+                background-color:  blue;
+            }
+            form.ng-valid{
+                background-color:  yellow;
+            }
+        </style>
+    </head>
+    <body>
+    <center>
+        <div ng-app="myModle" ng-controller="fromValid">
+            <form name="student">
+                <table class="tanle table-condensed">
+                    <tr>
+                        <td>Enter First Name</td>
+                        <td>
+                            <input name="firstName" type="text" ng-model="firstName" ng-minlength="3" required  />
+                            <span style="color: red">
+                                <span ng-show="student.firstName.$error.required">First Name is Required</span>
+                                <span ng-show="student.firstName.$error.minlenght">First Name is Too Short  !</span>
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Enter Last Name</td>
+                        <td>
+                            <input name="lastName" type="text" ng-model="lastName" ng-maxlength="10"   required  />
+                            <span style="color: red">
+                                <span ng-show="student.lastName.$error.required">Last Name is Required</span>
+                                <span ng-show="student.lastName.$error.maxlength">Last Name is Too Large  !</span>
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Enter Email</td>
+                        <td>
+                            <input name="email" type="email" ng-model="email" required  />
+                            <span style="color: red">
+                                <span ng-show="student.email.$error.required">Email is Required</span>
+                                <span ng-show="student.email.$error.email">Email is  Invalid !</span>
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><button ng-click="reset()">Reset</button></td>
+                        <td>
+                            <button ng-click="submit()" ng-disabled="student.firstName.$invalid || student.lastName.$invalid || student.email.$invalid">Submit</button>
+                        </td>
+                    </tr>
+
+                </table>
+
+            </form>
+        </div>
+
+
+    </center>
+</body>
+</html>

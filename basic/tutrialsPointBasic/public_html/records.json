@@ -1,0 +1,7 @@
+[
+        {"firstname" :  "Yasin", "lastname":"Arif",  "gender":"Male", "salary":20000},
+        {"firstname" :  "Sohan", "lastname":"Korin",  "gender":"FeMale", "salary":14000},
+        {"firstname" :  "Sagor", "lastname":"Aoo",  "gender":"Male", "salary":12000},
+        {"firstname" :  "Minhaz", "lastname":"Rahaman",  "gender":"FeMale", "salary":16000}
+        
+    ]
