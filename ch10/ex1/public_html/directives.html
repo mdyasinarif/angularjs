@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<head >
+        <title>Driective</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="css/bootstrap.css" rel="stylesheet" type="text/css"/>
+        <link href="css/bootstrap-theme.css" rel="stylesheet" type="text/css"/>
+        <script src="js/angular.js" type="text/javascript"></script>
+        <!--        <script src="js/angular.min.js" type="text/javascript"></script>-->
+        <script>
+            angular.module("exapleApp", [])
+                    .controller("defayltCtrl", function ($scope) {
+                        $scope.todos = [
+                            {action: "Get Groceroes", complete: false},
+                            {action: "Get Plumber", complete: false},
+                            {action: "Buy running shoes", complete: true},
+                            {action: "Buy flowers", complete: false},
+                            {action: "Call family", complete: false}
+                        ];
+                    });
+        </script>
+        <style>
+            .odd {background-color: lightcoral}
+            .even {background-color: lavenderblush}
+        </style>
+
+    </head>
+    <body>
+        <div id="todoPanel" class="panel" ng-controller="defayltCtrl">
+            <h3 class="panel-header">To DO List</h3>
+            <ng-include src="'table.html'"></ng-include>
+                        
+
+        </div>
+    </body>
+</html>

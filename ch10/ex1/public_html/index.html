@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html ng-app="exapleApp">
+    <head >
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="css/bootstrap.css" rel="stylesheet" type="text/css"/>
+        <link href="css/bootstrap-theme.css" rel="stylesheet" type="text/css"/>
+        <script src="js/angular.js" type="text/javascript"></script>
+<!--        <script src="js/angular.min.js" type="text/javascript"></script>-->
+      
+    </head>
+    <body>
+        <div id="todoPanel" class="panel" ng-controller="defayltCtrl">
+            <h3 class="panel-header">To DO List</h3>
+            <div>There are  {{todos.length}} items</div>
+            <div>There are <span ng-bind="todos.length"></span> items</div>
+            <div ng-bind-template="First : {{todos[0].action}}. Second:{{todos[1].action}}.Third :{{todos[2].action}}"></div>
+            <div ng-non-bindable>
+                AngulerJs user {{ todos }} characters for templates
+            </div>
+        </div>
+          <script>
+            angular.module("exapleApp", [])
+                    .controller("defayltCtrl", function ($scope) {
+                        $scope.todos = [
+                            {action: "Get Groceroes", complete: false},
+                            {action: "Get Plumber", complete: false},
+                            {action: "Buy running shoes", complete: true},
+                            {action: "Buy flowers", complete: false},
+                            {action: "Call family", complete: false}
+                        ];
+                    });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html ng-app="exapleApp">
+    <head >
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="css/bootstrap.css" rel="stylesheet" type="text/css"/>
+        <link href="css/bootstrap-theme.css" rel="stylesheet" type="text/css"/>
+        <script src="js/angular.js" type="text/javascript"></script>
+        <!--        <script src="js/angular.min.js" type="text/javascript"></script>-->
+        <script>
+            angular.module("exapleApp", [])
+                    .controller("defaultCtrl", function ($scope) {
+                        $scope.todos = [
+                            {action: "Get Groceroes", complete: false},
+                            {action: "Get Plumber", complete: false},
+                            {action: "Buy running shoes", complete: true},
+                            {action: "Buy flowers", complete: false},
+                            {action: "Call family", complete: false}
+                        ];
+                    });
+        </script>
+        <style>
+            td > *:first-child{font-weight:bold}
+        </style>
+
+    </head>
+    <body>
+        <div id="todoPanel" class="panel" ng-controller="defaultCtrl">
+            <h3 class="panel-header">To DO List</h3>
+
+            <table class="table table-striped">
+                <h1>Complete</h1>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Action</th>
+                        <th>Done</th>
+                    </tr>
+                </thead>
+
+                <tr ng-repeat="item in todos" ng-hide="!item.complete">
+                    <td>{{$index + 1}}</td>
+                    <td>{{item.action}} </td>
+                    <td>{{item.complete}} </td>
+                </tr>
+
+            </table>
+            <table class="table table-striped">
+                <h1>Incomplete</h1>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Action</th>
+                        <th>Done</th>
+                    </tr>
+                </thead>
+
+                <tr ng-repeat="item in todos" ng-hide="item.complete">
+                    <td>{{$index + 1}}</td>
+                    <td>{{item.action}} </td>
+                    <td>{{item.complete}} </td>
+                </tr>
+
+            </table>
+            <table class="table table-striped">
+                <h1>Filtere</h1>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Action</th>
+                        <th>Done</th>
+                    </tr>
+                </thead>
+
+                <tr ng-repeat="item in todos | filter:{complete:'false'}">
+                    <td>{{$index + 1}}</td>
+                    <td>{{item.action}} </td>
+                    <td>{{item.complete}} </td>
+                </tr>
+
+            </table>
+
+        </div>
+    </body>
+</html>
